@@ -1,0 +1,14 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon runner.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
