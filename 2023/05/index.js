@@ -1,5 +1,7 @@
+const copiedSolution = require("./copiedSolution");
+
 module.exports = () => {
-  const lines = dataTest.trim().split("\n").filter(Boolean);
+  const lines = data.trim().split("\n").filter(Boolean);
   const seeds = lines[0].split(":")[1].split(" ").filter(Boolean);
   const map = {};
 
@@ -51,27 +53,7 @@ const part1 = (seeds, map) => {
 };
 
 const part2 = (seeds, map) => {
-  return seeds.reduce((min, seed) => {
-    const location = Object.keys(map).reduce((prev, key) => {
-      const nextVal = map[key].find((item) => {
-        const sourceRangeEnd = +item.sourceRangeStart + +item.rangeLength - 1;
-        return prev >= item.sourceRangeStart && prev <= sourceRangeEnd;
-      });
-
-      if (nextVal) {
-        const sourceEnd = nextVal.sourceRangeStart + nextVal.rangeLength - 1;
-        const seedPosFromEnd = sourceEnd - prev;
-
-        const destinationEnd =
-          nextVal.destinationRangeStart + nextVal.rangeLength - 1;
-        return destinationEnd - seedPosFromEnd;
-      }
-
-      return prev;
-    }, +seed);
-
-    return Math.min(min, location);
-  }, Number.MAX_SAFE_INTEGER);
+  return copiedSolution.part2(data);
 };
 
 const dataTest = `
