@@ -3,5 +3,5 @@
 ## Running
 
 ```
-yarn start [year] [day]
+yarn start [year] [day] [part]
 ```
