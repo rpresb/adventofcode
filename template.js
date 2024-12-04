@@ -1,11 +1,12 @@
-module.exports = () => {
-  console.log("Part 1 ===>", part1());
-  console.log("Part 2 ===>", part2());
-};
+import { readInput } from "../../helper.js";
 
-function part1() {}
+export default function exec() {
+  const input = readInput("[year]/[day]/input.txt");
 
-function part2() {}
-
-const data = `
-`;
+  const lines = input.split("\n").map((line) =>
+    line
+      .split(" ")
+      .filter((x) => x.length)
+      .map(Number)
+  );
+}

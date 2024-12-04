@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon runner.js"
+    "start": "node runner.js",
+    "start:watch": "nodemon runner.js"
   },
   "author": "",
   "license": "ISC",
