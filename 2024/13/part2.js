@@ -33,6 +33,18 @@ export default function exec() {
   );
 }
 
+// px = a * ax + b * bx
+// py = a * ay + b * by
+//
+// b = (px - a * ax) / bx
+// py = a * ay + (px - a * ax) / bx * by
+// py = a * ay + px * by / bx - a * ax * by / bx
+// py - px * by / bx = a * ay - a * ax * by / bx
+// py * bx - px * by = a * ay * bx - a * ax * by
+// py * bx - px * by = a * (ay * bx - ax * by)
+//
+// a = (py * bx - px * by) / (ay * bx - ax * by)
+// b = (px - a * ax) / bx
 function minTokensToWin({ ax, ay, bx, by, px, py }) {
   const a = (py * bx - px * by) / (ay * bx - ax * by);
   const b = (px - a * ax) / bx;
